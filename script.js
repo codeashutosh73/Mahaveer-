@@ -94,3 +94,12 @@ document.getElementById("prevBtn").addEventListener("click", prevSlide);
 setInterval(nextSlide, 3000);
 
 updateCards();
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".navbar-toggler").forEach(function (btn) {
+    btn.classList.add("collapsed"); // Default collapsed state
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("collapsed");
+    });
+  });
+});

@@ -29,22 +29,33 @@
     </div>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg py-3 sticky-top">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top shadow-sm bg-white">
       <div class="container">
         <a class="navbar-brand fw-bold text-dark" href="#">
-          <img src="logo2.jpg" width="60px" alt="logo" />
+          <img src="logo2.jpg" width="60px" alt="logo" class="me-2" />
           Mahaveer Cancer Care
         </a>
+
+        <!-- Custom Animated Toggler -->
         <button
-          class="navbar-toggler custom-toggler"
+          class="navbar-toggler btn border-0 collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <span class="custom-icon">&#9776;</span>
-          <!-- Custom bars icon -->
+          <div class="animated-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
-        <div id="nav" class="collapse navbar-collapse slide-from-left">
+
+        <div id="nav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto me-3">
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item">
@@ -60,12 +71,13 @@
               <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
-          <a href="#appointment" class="btn btn-primary custom">
-            Book Appointment
-          </a>
+          <a href="#appointment" class="btn btn-primary custom"
+            >Book Appointment</a
+          >
         </div>
       </div>
     </nav>
+
     <!-- HERO -->
     <header id="home" class="hero">
       <div class="container hero-inner">
@@ -632,7 +644,7 @@
         <div class="col-md-4 col-lg-3">
           <div class="video-card">
             <video autoplay muted loop playsinline>
-              <source src="../video1.mp4" type="video/mp4" />
+              <source src="video1.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <div class="video-title">Healthcare Innovations</div>
@@ -653,7 +665,7 @@
         <div class="col-md-4 col-lg-3">
           <div class="video-card">
             <video autoplay muted loop playsinline>
-              <source src="../video2.mp4" type="video/mp4" />
+              <source src="video2.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <div class="video-title">Modern Treatments</div>
@@ -674,7 +686,7 @@
         <div class="col-md-4 col-lg-3">
           <div class="video-card">
             <video autoplay muted loop playsinline>
-              <source src="../video3.mp4" type="video/mp4" />
+              <source src="video3.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <div class="video-title">Doctor Insights</div>
@@ -693,7 +705,7 @@
         <div class="col-md-4 col-lg-3">
           <div class="video-card">
             <video autoplay muted loop playsinline>
-              <source src="../video4.mp4" type="video/mp4" />
+              <source src="video4.mp4" type="video/mp4" />
             </video>
             <div class="card-body">
               <div class="video-title">Hospital Facilities</div>

@@ -86,14 +86,14 @@ a {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  scrollbar-width: none;
+  scrollbar-width: smooth;
 
   scroll-behavior: smooth;
   background: linear-gradient(180deg, #f7fbff 0%, #eaf4ff 55%, #ffffff 100%);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: none;
+  overflow-x: hidden;
 }
 
 /* Rotating soft gradient in header */
@@ -139,6 +139,90 @@ body {
   text-decoration: none;
 }
 
+.navbar-nav .nav-link {
+  position: relative;
+  font-weight: 500;
+  color: #0d6efd;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+.navbar-nav .nav-link:hover {
+  color: #084298;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 70%;
+}
+
+/* Active link border */
+.navbar-nav .active-link::after {
+  width: 70%;
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(45deg, #0d6efd, #0a58ca);
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #084298, #052c65);
+  transform: translateY(-2px);
+}
+
+/* Animated Toggler */
+.animated-toggler {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.animated-toggler span {
+  display: block;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* When collapsed (default) */
+.navbar-toggler.collapsed .animated-toggler span:nth-child(1) {
+  transform: translateX(-6px);
+}
+.navbar-toggler.collapsed .animated-toggler span:nth-child(3) {
+  transform: translateX(6px);
+}
+
+/* When expanded (menu open) */
+.navbar-toggler:not(.collapsed) .animated-toggler span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar-toggler:not(.collapsed) .animated-toggler span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggler:not(.collapsed) .animated-toggler span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 /* Hero ===================================================================================*/
 .hero {
   position: relative;
@@ -315,7 +399,7 @@ p.lead {
 }
 /* Floating Social Links */
 .social-floating {
-  position: fixed;
+  position: absolute;
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
